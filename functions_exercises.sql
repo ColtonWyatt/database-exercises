@@ -38,4 +38,34 @@ SELECT first_name, last_name
 FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya') ORDER BY last_name ASC;
 
+SELECT first_name, last_name, emp_no
+FROM employees
+WHERE last_name Like '%E%' ORDER BY emp_no;
 
+SELECT first_name, last_name, emp_no
+FROM employees
+WHERE last_name Like '%E%' ORDER BY emp_no DESC;
+
+
+
+SELECT CONCAT (first_name, '  ',  last_name)
+FROM  employees
+WHERE last_name LIKE 'E%';
+
+SELECT *
+FROM employees
+WHERE month (birth_date) = 12
+  AND day (birth_date) = 25
+
+SELECT *
+FROM employees
+WHERE year (hire_date) BETWEEN 1990 AND 1999
+  AND month (birth_date) = 12
+  AND day (birth_date) = 25
+
+SELECT *
+FROM employees
+WHERE year (hire_date) BETWEEN 1990 AND 1999
+  AND month (birth_date) = 12
+  AND day (birth_date) = 25
+ORDER BY birth_date ASC, hire_date DESC;
